@@ -1,0 +1,32 @@
+*{background-color:lightgreen;}
+
+.question{background-color: black;color: white;}
+
+p{color: blue;}
+
+#bow>ul>li>b{color: white;background-color: rebeccapurple;}
+
+#bow>ul>li{background-color: rebeccapurple;color: white;}
+
+#definition>p>b{color: red;}
+
+#definition>p>em{color: red;}
+
+
+
+#reading>h1{color: blue; background-color: lightgreen;}
+
+#reading ul li :first-child{color: black; background-color: white;}
+
+#reading :first-child{color:blue;}
+
+#reading>ul>li{color: red;background-color: white;}
+
+#reading>ul>li>b{background-color: white;}
+
+
+
+
+
+
+
