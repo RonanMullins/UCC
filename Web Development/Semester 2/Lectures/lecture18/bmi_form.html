@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>BMI</title> 
+        <script src="bmi.js" type="module"></script>
+    </head>
+    <body>
+        <form>
+            <label for="weight">Weight (kg):</label>
+            <input type="text" name="weight" id="weight"/>
+            <span id="weight_errors"></span>
+            <br/>
+            <label for="height">Height (m):</label>
+            <input type="text" name="height" id="height"/>
+            <span id="height_errors"></span>
+            <br/>
+            <label for="bmi">BMI:</label>
+            <input type="text" name="bmi" id="bmi" disabled/>
+            <span id="weight_errors"></span>
+            <br/>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>
