@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="add_instrument">
+    <h2>Add Product</h2>
+    <table id="admin_table">
+            <tr>
+                <th>instrument id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        {% for instrument in instruments %}
+            <tr>
+                <td>{{ instrument["instrument_id"] }}</td>
+                <td>{{ instrument["name"] }}</td>
+                <td>{{ instrument["category"] }}</td>
+                <td>€{{ instrument["price"] }}</td>
+                <td>{{ instrument["description"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {{ form.add_name.label }}
+        {{ form.add_name() }}
+        {% for error in form.add_name.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.add_type.label }}
+        {{ form.add_type() }}
+        {% for error in form.add_type.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.add_price.label }}
+        {{ form.add_price() }}
+        {% for error in form.add_price.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.add_description.label }}
+        {{ form.add_description() }}
+        {% for error in form.add_description.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.image_file.label }}
+        {{ form.image_file() }}
+        {% for error in form.image_file.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.submit() }}
+    </form>
+
+</section>
+     
+{% endblock %}

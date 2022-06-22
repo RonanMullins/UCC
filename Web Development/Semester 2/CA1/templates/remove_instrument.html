@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="remove_instrument">
+        <h2>Remove Product</h2>
+    <table id="admin_table">
+            <tr>
+                <th>instrument id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th><p>Amend</p></th>
+            </tr>
+        {% for instrument in instruments %}
+            <tr>
+                <td>{{ instrument["instrument_id"] }}</td>
+                <td>{{ instrument["name"] }}</td>
+                <td>{{ instrument["category"] }}</td>
+                <td>€{{ instrument["price"] }}</td>
+                <td>{{ instrument["description"] }}</td>
+                <td><a href="{{ url_for('admin_remove_product', instrument_id=instrument['instrument_id']) }}">Remove Product</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</section>
+
+{% endblock %}

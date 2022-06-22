@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="admin">
+    <h2>All Messages</h2>
+    <table id="admin_table">
+            <tr>
+                <th><p>Name</p></th>
+                <th><p>Email</p></th>
+                <th><p>Message</p></th>
+            </tr>
+        {% for message in messages %}
+            <tr>
+                <td><p>{{ message["name"] }}</p></td>
+                <td><p>{{ message["email"] }}</p></td>
+                <td><p>{{ message["message"] }}</p></td>
+            </tr>
+        {% endfor %}
+        {% if not messages %}
+            <tr>
+                <td colspan="3" id="message">You have no messages</td>
+            </tr>
+        {% endif %}
+    </table>
+    <ul id="admin_nav">
+        <li><a href="{{ url_for('clear_contact') }}">Clear Messages</a></li>
+        <li><a href="{{ url_for('add_instrument') }}">Add Product</a></li>
+        <li><a href="{{ url_for('remove_instrument') }}">Remove Product</a></li>
+        <li><a href="{{ url_for('remove_order_page') }}">Cancel Orders</a></li>
+    </ul>
+</section>
+
+{% endblock %}

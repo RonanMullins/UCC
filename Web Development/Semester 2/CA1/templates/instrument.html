@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="instrument">
+    <h2>{{ instrument["name"] }}</h2>
+    <img src="{{ url_for('static', filename=instrument['image']) }}" width=30%>
+    <p>Price: €{{ instrument["price"] }}</p>
+    <p>{{ instrument["description"] }}</p>
+    <p><a href="{{ url_for('add_to_cart', instrument_id=instrument['instrument_id']) }}">Add to cart</a></p>
+    <p><a href="{{ url_for('instruments') }}">Continue Shopping</a></p>
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="confirmation">
+    <h2>Delete Account</h2>
+    <p>Are you sure you want to delete your Account?</p>
+    <ul>
+        <li><a href="{{ url_for('user_account') }}">Cancel</a></li>
+        <li><a href="{{ url_for('remove_account') }}">Delete</a></li>
+    </ul>
+</section>
+
+{% endblock %}

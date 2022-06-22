@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="cart">
+    <h2>Your cart</h2>
+    {% if cart %}
+        <table>
+            <tr>
+                <td colspan="2"><p>Product</p></td>
+                <td><p>Price</p></td>
+                <td><p>Quantity</p></td>
+            </tr>
+        {% for instrument_id in cart %}
+            <tr>
+                <td><img src="{{ url_for('static', filename=image[instrument_id]) }}" width=25%></td>
+                <td><p>{{ name[instrument_id] }}</p></td>
+                <td><p>€{{ price[instrument_id] }}</p></td>
+                <td><p>{{ cart[instrument_id] }}</p></td>     
+            </tr>
+        {% endfor %}
+            <tr>
+                <td colspan="4"><p>€{{ total }}</p></td>
+            </tr>
+        </table>
+    {% else %}
+        <p>Your cart is empty!</p>
+    {% endif %}
+    <ul>   
+        {% if cart %}
+            <li><a href="{{ url_for('instruments') }}">Continue Shopping</a></li>
+            <li><a href="{{ url_for('clear_cart') }}">Clear cart</a></li>
+            <li><a href="{{ url_for('checkout') }}">Checkout</a></li>
+        {% endif %}
+    </ul>
+</section>
+
+{% endblock %}
+
+
+<!-- <td><a href="{{ url_for('remove_cart_item', instrument_id=cart[instrument_id]) }}">Remove Item</a></td> -->

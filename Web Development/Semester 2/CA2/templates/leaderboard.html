@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<table id="leaderboard">
+    <tr>
+        <th colspan="3"><h2>Leaderboard</h2></th>
+    </tr>
+    <tr>
+        <th><p>Username</p></th>
+        <th><p>Score</p></th>
+        <th><p>Time</p></th>
+    </tr>
+    {% for player in players %}
+    <tr>
+        <td><p>{{ player["user_id"] }}</p></td>
+        <td><p>{{ player["score"] }}</p></td>
+        <td><p>{{ player["time"] }}</p></td>
+    </tr>
+    {% endfor %}
+    {% if not players %}
+    <tr>
+        <td colspan="3" id="message" ><p>No data to display</p></td>
+    </tr>
+    {% endif %}
+</table>
+{% endblock %}

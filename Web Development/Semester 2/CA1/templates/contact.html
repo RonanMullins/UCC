@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <h2>Contact us</h2>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        {{ form.name() }}
+        {% for error in form.name.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.email.label }}
+        {{ form.email() }}
+        {% for error in form.email.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.message.label }}
+        {{ form.message() }}
+        {% for error in form.message.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.submit() }}
+    </form>
+{% endblock %}

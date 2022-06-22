@@ -1,0 +1,275 @@
+canvas{
+    background-color: black;
+    border: 0.8em solid black;
+    border-radius: 1em;
+    outline: 0.8em solid #e9ce7c;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#game{
+    display: block;
+    margin: 1em auto; 
+    font-size: 0.8em;
+}
+#game a:hover{
+    color: white;
+    background-color: #e9ce7c;
+	border-radius: 10em;
+    padding: 0.5% 0.5% 0.5% 0.5%;
+    margin: 5% 5% 5% 5%;
+}
+#outcome{
+    color: #e9ce7c;
+    text-align: center;
+    font-size: 2em;
+}
+#score {
+    color: #e9ce7c;
+    text-align: center;
+    font-size: 1em;
+}
+#time {
+    color: #e9ce7c;
+    text-align: center;
+    font-size: 1em;
+}
+
+
+/* universal */
+html{ 
+    scroll-behavior: smooth;
+    zoom: 110%;
+    background-color: #213430;
+}
+html>*{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding: 0% 0% 0% 0%;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+h1{text-align: left;}
+h2{text-align: center;font-size: 1em;}
+ul{
+    text-decoration: none;
+    text-decoration-style: none;
+    list-style: none;
+}
+a:link{color:black;}
+a:visited {text-decoration: none; color: black;}
+a{cursor: pointer;text-decoration: none; text-decoration-style: none;}
+
+/* header */
+.wrapper{
+    display: flex;
+    flex-flow: row wrap;       
+}
+.wrapper>*{
+    flex: 1 100%;
+    text-align: center;  
+}
+#title{
+    font-family: Courier, monospace;
+    font-size: 4em;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+header{
+	border:solid black;
+    background-color: #509b66;
+    padding: 1% 1% 1% 1%;
+    margin: 0.1% 0.1% 0.1% 0.1%;
+}
+header>img{
+    float: left;
+    padding-left: 2%;
+}
+nav>ul>li>a:hover{ 
+    color: white;
+    background-color: #e9ce7c;
+	border-radius: 10em;
+    padding: 5% 5% 5% 5%;
+    margin: 5% 5% 5% 5%;
+}
+#nav_container{
+	display: flex;
+	font-size: 4.5em;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+}
+#nav_container>li{
+	flex:1;
+    font-size: 0.3em;
+    margin-bottom: 2%;
+}
+
+/* footer */
+footer{
+    background-color: #509b66;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    padding: 1% 1% 1% 5%;
+    margin: 0.1% 0.1% 0.1% 0.1%;
+}
+footer>h2{
+    text-align: center;
+}
+footer>p{
+    text-align: left;
+    font-size: 1em;
+}
+footer a{
+    text-decoration: underline;
+}
+
+/* index */
+main{
+    text-align: left;
+    border-style: solid;
+    border-color: black; 
+    background-color: #509b66;
+    height: 150%;
+    font-size: 2em;
+    border-radius: 1em;
+    padding: 0.1% 0.1% 0.1% 0.1%;
+    margin: 0.1% 0.1% 0.1% 0.1%;
+}
+main>ul{
+    text-align: left;
+}
+#welcome>h2{    
+    margin-top: 5%;
+    font-size: 1.2em;
+    border: solid black;
+    background-color: #e9ce7c;
+    border-radius: 1em;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+}
+#welcome>h3{
+    margin-top: 5%;
+    font-size: 0.8em;
+    text-decoration: underline;
+    margin-left: 35%;
+    margin-right: 35%; 
+    text-align: center;
+}
+#welcome p{
+    font-size: 0.7em;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+}
+#welcome a{
+    font-size: 2em;
+    color: black;
+    background-color: #e9ce7c;
+    border-style: solid;
+    border-color: #e9ce7c;
+	border-radius: 10em;
+    padding: 0.5% 3% 0.5% 3%;
+    margin: 5% 5% 5% 5%;
+}
+#welcome table{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#welcome a:hover{
+    color: white;
+    background-color: #e9ce7c;
+	border-radius: 10em;
+    padding: 0.5% 3% 0.5% 3%;
+    margin: 5% 5% 5% 5%;
+}
+
+/* leaderboard table */
+#leaderboard {
+    background-color: #509b66;
+    width: 80%;
+    font-size: 0.5em;
+    margin-bottom: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    padding-top: 5%;
+    border-collapse: collapse;
+}
+#leaderboard td,th{
+    border: solid black;
+    text-align: center;
+    /* border-radius: 1em; */
+}
+#leaderboard th {
+    color: black;
+}
+#leaderboard td {
+    text-align: center;
+}
+#leaderboard #message{
+    text-align: center;
+}
+#leaderboard tr:nth-child(3) {
+    background-color: gold;
+    color: black;
+}
+#leaderboard tr:nth-child(4) {
+    background-color: silver;
+    color: black;
+}
+#leaderboard tr:nth-child(5) {
+    background-color: #CD7F32;
+    color: black;
+}
+
+
+/* forms */
+form{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1em;
+    text-align: center;
+    display: grid;
+    color: black;
+    transition: 0.2s 0s;
+    padding: 1% 20% 1% 20%;
+    margin: 2% 14% 5% 14%;
+}
+form>label{
+    color: black;
+    background-color: #e9ce7c;
+    text-align: center;
+    font-size: 0.4em;
+    padding: 3%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.5em;
+}
+form input#user_id, input#password, input#password2{
+    background-color: white;  
+    border-radius: 0.5em;
+    margin: 1%;
+}
+form input[type=submit]{
+    color: black;
+    background-color: #e9ce7c;
+    border-style: solid;
+    border-color: black; 
+    padding: 4%; 
+    border-radius: 1em;
+}
+form input[type=submit]:hover{
+    color: white;
+    background-color: #e9ce7c;
+    transition: 0.2s 0s;
+}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <section id="welcome">
+        <h2>Welcome!</h2>
+        <table>
+            <tr>
+                <td><a href="{{ url_for('instruments') }}">Our Instruments</a></td>
+                <td><a href="{{ url_for('electric_guitars') }}">Electric guitars</a></td>
+                <td><a href="{{ url_for('acoustic_guitars') }}">Acoustic guitars</a></td>
+                <td><a href="{{ url_for('wind_instruments') }}">Wind instruments</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('instruments') }}"><img src ="{{ url_for('static', filename='cart.png') }}" width="10%" alt="Cart icon"/></a></td>
+                <td><a href="{{ url_for('electric_guitars') }}"><img src ="{{ url_for('static', filename='cart.png') }}" width="10%" alt="Cart icon"/></a></td>
+                <td><a href="{{ url_for('acoustic_guitars') }}"><img src ="{{ url_for('static', filename='cart.png') }}" width="10%" alt="Cart icon"/></a></td>
+                <td><a href="{{ url_for('wind_instruments') }}"><img src ="{{ url_for('static', filename='cart.png') }}" width="10%" alt="Cart icon"/></a></td>
+            </tr>
+        </table>
+    </section>
+{% endblock %}

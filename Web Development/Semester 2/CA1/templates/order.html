@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="order_page">
+    <h2>Thanks For Shopping!</h2>
+    <p>{{ message }}</p>
+    <h3>Invoice</h3>
+
+    {% if discount %}
+    <p>Before Shipping: €{{ before_shipping }}</p>
+    <p>Shipping: + €{{ shipping }}</p>
+    <p>Before Discount: €{{ before_discount }}</p>
+    <p>Discount applied: - €{{ discount }}</p>
+    <p>Your total: €{{ total }}</p>
+    {% else %}
+    <p>Before Shipping: €{{ before_shipping }}</p>
+    <p>Shipping: + €{{ shipping }}</p>
+    <p>Your total: €{{ total }}</p>
+    {% endif %}
+    
+</section>
+
+    
+{% endblock %}

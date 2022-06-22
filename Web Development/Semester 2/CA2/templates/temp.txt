@@ -1,0 +1,10 @@
+<!-- {% extends "base.html" %}
+{% block main_content %}
+<script src="{{ url_for('static', filename='survival.js') }}" type="module"></script>
+<section id="game">
+    <canvas width="512" height="320"></canvas>
+</section>
+<p id="outcome"></p>
+<p id="score"></p>
+<a id="playagain"></a>
+{% endblock %} -->

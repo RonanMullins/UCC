@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Music Shop</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}" />
+        <link rel="icon" href="{{ url_for('static', filename='music-note.png')}}"/>
+    </head>
+	<body class="wrapper">
+        <header>
+            <img src ="{{ url_for('static', filename='music-note.png') }}" width="8%" alt="Musical notes"/>
+            <h1 id="title"><a href="{{ url_for('index')}}">Music Shop</a></h1>
+            <nav>
+                <ul id="nav_container">
+                    <li><a href="{{ url_for('index')}}">Home</a></li>
+                    {% if g.user %}
+                    <li><a href="{{ url_for('user_account') }}">{{ g.user }}'s Account</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for('cart') }}"><img src ="{{ url_for('static', filename='cart.png') }}" width="20%" alt="Cart icon"/></a></li>
+                </ul> 
+                <ul id="nav_container2">
+                    <li><a href="{{ url_for('admin')}}">Admin</a></li>
+                    <li><a href="{{ url_for('contact')}}">Contact us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block main_content %}{% endblock %}
+        </main>
+		<footer>
+            <h2>Sources</h2>
+            <p><a href="https://www.flaticon.com/free-icon/music-note_651717?term=musical%20instrument&page=1&position=1&page=1&position=1&related_id=651717&origin=search#" title="flaticon">Favicon</a> by from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+            <p><a href="https://www.flaticon.com/free-icon/music-note_651717?term=musical%20instrument&page=1&position=1&page=1&position=1&related_id=651717&origin=search#" title="flaticon">Shopping cart icon</a> by from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+           
+            <p><a href="https://unsplash.com/photos/-BjOozA1Emg">Fender Stratocaster</a> by 戸山 神奈 free to use under the unsplash license</p> 
+            <p><a href="https://commons.wikimedia.org/wiki/File:Modified_Fender_Squier_Stratocaster.jpg">Squier Stratocaster</a> by Arkach free to use under the Creative Commons Attribution 3.0</p> 
+            <p><a href="https://commons.wikimedia.org/wiki/File:Madrid-Gibson_Les_Paul_(2009).jpg">Gibson Les Paul</a> by Alberto Carrasco Casado free to use under the Creative Commons Attribution 2.0 Generic</p> 
+            <p><a href="https://commons.wikimedia.org/wiki/File:Les_Paul_100.JPG">Epiphone Les Paul</a> by Coles free to use under public domain</p> 
+
+            <p><a href="https://unsplash.com/photos/Dyo5xZX687M">Martin acoustic guitar</a> by Sergei Sushchik  free to use under the unsplash license</p> 
+            <p><a href="https://unsplash.com/photos/-6cScQvixFY">Taylor acoustic guitar</a> by Rock Zhou free to use under the unsplash license</p> 
+            <p><a href="https://unsplash.com/photos/DSjILstcB78">Fender acoustic guitar</a> by TK free to use under the unsplash license</p> 
+            <p><a href="https://unsplash.com/photos/-BjOozA1Emg">Yamaha acoustic guitar</a> by Veradrive free to use under Creative Commons CC0 1.0 Universal Public Domain Dedication.</p>
+
+            <p><a href="https://www.flickr.com/photos/45131642@N00/24462245013">Kazoo</a> by Phil Parker free to use under the Attribution 2.0 Generic (CC BY 2.0)</p> 
+            <p><a href="https://commons.wikimedia.org/wiki/File:Tin_whistle.jpg">Tin Whistle</a> by Eltharion free to use under the unsplash license</p> 
+            <p><a href="https://commons.wikimedia.org/wiki/File:Saksofon_altowy_Serie_III_GP_firmy_Selmer.jpg">John Packer Saxophone</a> by muzyczny free to use under the 4.0 International, 3.0 Unported, 2.5 Generic, 2.0 Generic and 1.0 Generic license.</p> 
+            <p><a href="https://commons.wikimedia.org/wiki/File:Western_Concert_Flute.jpg">Yamaha Flute</a> by Thea Paraskevaides free to use under the Creative Commons Attribution-Share Alike 4.0 International license.</p>     
+		</footer>
+	</body>
+</html>

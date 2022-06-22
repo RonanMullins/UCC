@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Slime Survival</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+        <link rel="icon" href="{{ url_for('static', filename='sword.png')}}"/>
+    </head>
+	<body class="wrapper">
+        <header>
+            <h1 id="title"><a href="{{ url_for('index')}}">Slime Survival</a></h1>
+            <nav>
+                <ul id="nav_container">
+                    <li><a href="{{ url_for('index')}}">Home</a></li>
+                    {% if g.user %}
+                    <li>Logged in as : {{ g.user }}</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+                </ul> 
+            </nav>
+        </header>
+        <main>
+            {% block main_content %}{% endblock %}
+        </main>
+		<footer>
+            <h2>References</h2>
+            <p>Mystic Woods game artwork sourced from <a href="https://game-endeavor.itch.io/mystic-woods">itch.io</a> by Game Endeavor</p>
+            <p>Sword flavicon sourced from <a href="https://www.flaticon.com/free-icon/sword_842184?term=sword&page=1&position=1&page=1&position=1&related_id=842184&origin=search">flaticon.com</a> by Freepik</p><br>
+            
+		</footer>
+	</body>
+</html>

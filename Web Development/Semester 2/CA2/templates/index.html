@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block main_content %}
+<section id="welcome">
+    <h2>Welcome!</h2>
+    <h3>How to Play</h3>
+    <table>
+        <tr><td><p>Use the arrow keys to move and spacebar to swing your sword.</p></td></tr>
+        <tr><td><p>Chests are worth 50 points.</p></td></tr>
+        <tr><td><p>Each Slime killed is worth 10 points.</p></td></tr>
+        <tr><td><p>Each Skeleton killed is worth 25 points.</p></td></tr>
+        <tr><td><p>Survive as long as you can!</p></td></tr>
+        <tr><td><p><a href="{{ url_for('survival') }}">PLAY</a></p></td></tr>
+    </table>
+</section>
+{% endblock %}

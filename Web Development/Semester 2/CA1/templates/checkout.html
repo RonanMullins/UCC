@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="checkout">
+    <h2>Checkout</h2>
+    {% if cart %}
+        <table>
+            <tr>
+                <td colspan="2"><p>Product</p></td>
+                <td><p>Price</p></td>
+                <td><p>Quantity</p></td>
+            </tr>
+        {% for instrument_id in cart %}
+            <tr>
+                <td><img src="{{ url_for('static', filename=image[instrument_id]) }}" width=20%></td>
+                <td><p>{{ name[instrument_id] }}</p></td>
+                <td><p>€{{ price[instrument_id] }}</p></td>
+                <td><p>{{ cart[instrument_id] }}</p></td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td colspan="4"><p>€{{ total }}</p></td>
+            </tr>
+        </table>
+    {% else %}
+        <p>Your cart is empty!</p>
+    {% endif %}
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            {{ form.discount_code.label }}
+            {{ form.discount_code() }}
+            {% for error in form.discount_code.errors %}
+                {{ error }}
+            {% endfor %}
+            <br />
+            {{ form.first_name.label }}
+            {{ form.first_name() }}
+            {% for error in form.first_name.errors %}
+                {{ error }}
+            {% endfor %}
+            <br />
+            {{ form.last_name.label }}
+            {{ form.last_name() }}
+            {% for error in form.last_name.errors %}
+                {{ error }}
+            {% endfor %}
+            <br />
+            {{ form.address.label }}
+            {{ form.address() }}
+            {% for error in form.address.errors %}
+                {{ error }}
+            {% endfor %}
+            <br />
+            <ul>
+                <li>
+                    {{ form.delivery() }}
+                    {% for error in form.delivery.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </li>
+
+            </ul>
+            <br />
+            {{ form.submit() }}
+        </form>
+</section>
+
+{% endblock %}
+
+

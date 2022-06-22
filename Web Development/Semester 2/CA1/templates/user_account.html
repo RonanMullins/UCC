@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="user">
+    <h2>Hello {{ g.user }}!</h2>
+    <h3>Your Orders</h3>
+    <table id="user_table">
+            <tr>
+                <th><p>Order No.</p></th>
+                <th><p>First Name</p></th>
+                <th><p>Last Name</p></th>
+                <th><p>Address</p></th>
+                <th><p>Delivery Type</p></th>
+                <th><p>Expected Delivery</p></th>
+                <th><p>Total</p></th>
+                <th><p>Amend</p></th>
+            </tr>
+        {% for order in orders %}
+            <tr>
+                <td><p>{{ order["order_no"] }}</p></td>
+                <td><p>{{ order["first_name"] }}</p></td>
+                <td><p>{{ order["last_name"] }}</p></td>
+                <td><p>{{ order["address"] }}</p></td>
+                <td><p>{{ order["delivery_type"] }}</p></td>
+                <td><p>{{ order["delivery_date"] }}</p></td>
+                <td><p>€{{ order["total"] }}</p></td>
+                <td><a href="{{ url_for('remove_order', order_no=order['order_no']) }}">Cancel Order</a></td>
+            </tr>
+        {% endfor %}
+        {% if not orders %}
+            <tr>
+                <td colspan="8" id="message">You have no orders</td>
+            </tr>
+        {% endif %}
+    </table>
+    <ul>
+        <li><a href="{{ url_for('confirmation') }}">Delete Account</a></li>
+    </ul>
+</section>
+
+{% endblock %}

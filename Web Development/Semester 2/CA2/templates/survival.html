@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Slime Survival</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+        <link rel="icon" href="{{ url_for('static', filename='sword.png')}}"/>
+    </head>
+	<body class="wrapper">
+        <main>
+            <section id="game">
+                <canvas width="512" height="320"></canvas>
+                <script src="{{ url_for('static', filename='survival.js') }}" type="module"></script>
+                <p id="outcome"></p>
+                <p>Score: </p>
+                <p id="score"></p>
+                <p>Time: </p>
+                <p id="time"></p>
+                <p><a id="playagain"></a></p>
+                <p><a id="home"></a></p>
+            </section>
+        </main>
+	</body>
+</html>

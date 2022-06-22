@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="remove_order">
+        <h2>Customer Orders</h2>
+    <table id="admin_table">
+            <tr>
+                <th>Order No.</th>
+                <th>User id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Delivery Type</th>
+                <th>Expected Delivery</th>
+                <th>Instrument id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th><p>Amend</p></th>
+            </tr>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order["order_no"] }}</td>
+                <td>{{ order["user_id"] }}</td>
+                <td>{{ order["first_name"] }}</td>
+                <td>{{ order["last_name"] }}</td>
+                <td>{{ order["address"] }}</td>
+                <td>{{ order["delivery_type"] }}</td>
+                <td>{{ order["delivery_date"] }}</td>
+                <td>{{ order["instrument_id"] }}</td>
+                <td>{{ order["names"] }}</td>
+                <td>{{ order["prices"] }}</td>
+                <td>€{{ order["total"] }}</td>
+                <td><a href="{{ url_for('admin_remove_order', order_no=order['order_no']) }}">Cancel Order</a></td>
+            </tr>
+        {% endfor %}
+        {% if not orders %}
+        <tr>
+            <td colspan="12" id="message">You have no orders</td>
+        </tr>
+    {% endif %}
+    </table>
+</section>
+   
+{% endblock %}
