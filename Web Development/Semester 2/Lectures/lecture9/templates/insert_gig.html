@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <form action="" method="post" novalidate>
+
+        {{ form.hidden_tag() }}
+        {{ form.band.label }}
+        {{ form.band() }}
+        {% for error in form.band.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.gig_date.label }}
+        {{ form.gig_date() }}
+        {% for error in form.gig_date.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />
+        {{ form.submit() }}
+    </form>
+    <p>
+        {{ message }}
+    </p>
+
+    {% if gigs %}
+        <table>
+            <caption>{{ caption }}</caption>
+            {% for gig in gigs %}
+                <tr>
+                    <td>{{ gig["band"] }}</td>
+                    <td>{{ gig["gig_date"] }}</td>
+                </tr>    
+            {% endfor %}
+        </table>
+    {% endif %}
+    
+{% endblock %}

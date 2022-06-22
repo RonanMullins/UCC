@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block main_content%}
+    {%if name %}
+        <p>So long, {{ name }}!</p>
+    {% else %}
+        <p>Bye bye, my anonymous friend!</p>
+    {% endif %}
+{% endblock %}

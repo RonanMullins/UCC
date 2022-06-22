@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<form action="" method="POST">
+
+    <label for="weight">Weight in Kg:</label>
+    <input type="text" size="50" name="weight" id="weight" value="{{ weight }}"/>
+    <br/>
+    <label for="height">Height in Metres:</label>
+    <input type="text" size="50" name="height" id="height"  value="{{ height }}"/>
+    <br/>
+    <label for="bmi">BMI:</label>
+    <input type="text" size="50" name="bmi" id="bmi"  value="{{ bmi }}" disabled/>
+    <br/>
+    
+    <input type="submit"/>
+ 
+
+    
+
+
+
+
+</form>
+
+
+{% endblock %}
