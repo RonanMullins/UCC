@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<form action="" method="POST">
+
+    <label for="inches">Inches: {{ inches }}</label>
+    <input type="number" name="inches" id="inches"/>
+    <br/>
+    <label for="centimetres">Centimetres:{{ centimetres }}</label>
+    <input type="number" name="centimetres" id="centimetres" />    
+    <br/>
+    <input type="submit">
+    
+</form>
+<p>{{ error }}</p>
+{% endblock %}

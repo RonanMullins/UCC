@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<p><b>From:</b></p>
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+
+    {{ form.fahrenheit_from.label }}
+    {{ form.fahrenheit_from() }}
+    {% for error in form.fahrenheit_from.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+
+    {{ form.celsius_from.label }}
+    {{ form.celsius_from() }}
+    {% for error in form.celsius_from.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+
+    {{ form.kelvin_from.label }}
+    {{ form.kelvin_from() }}
+    {% for error in form.kelvin_from.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+
+    {{ form.label }}
+    {{ form.input }}
+    <br/>
+    <img src="{{ url_for('static', filename='image.png')}}"
+
+<p><b>To:</b></p>
+
+    {{ form.fahrenheit_to.label }}
+    {{ form.fahrenheit_to() }}
+    {% for error in form.fahrenheit_to.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+
+    {{ form.celsius_to.label }}
+    {{ form.celsius_to() }}
+    {% for error in form.celsius_to.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+
+    {{ form.kelvin_to.label }}
+    {{ form.kelvin_to() }}
+    {% for error in form.kelvin_to.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+
+    {{ form.label }}
+    {{ form.answer(disabled=True) }}
+    <br/>
+    
+    {{ form.submit() }}
+
+</form>
+
+<p><a href="{{ url_for('cipher') }}">Cipher Shift</a></p>
+
+
+{% endblock %}

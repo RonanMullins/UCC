@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <p>Here are your lotto numbers for this week:</p>
+    <!-- <ul>
+    {% for n in line %}
+        <li>{{ n }}</li>
+    {% endfor %}
+    </ul> -->
+
+    <table>
+        <tr>
+            <td>{{ lotto_numbers }}</td>
+        </tr>
+    </table>
+    
+
+{% endblock %}
